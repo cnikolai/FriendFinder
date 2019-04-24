@@ -5,7 +5,6 @@
 // ===============================================================================
 var friendData = require("../data/friends.js");
 
-
 module.exports = function(app) {
 // Routes
 // =============================================================
@@ -28,13 +27,13 @@ app.post("/api/friends", function(req, res) {
     }
     if (totalDifference < leastDifference) {
       mostCompatibileName = friendData[i]["name"];
-      mostCompatibilePic = friendData[i]["picture"];
+      mostCompatibilePic = friendData[i]["photo"];
       leastDifference = totalDifference;
     }
   }
   console.log(leastDifference);
   console.log(mostCompatibileName);
   console.log(mostCompatibilePic);
-  res.json({ name: mostCompatibileName, picture: mostCompatibilePic });
+  res.json({ name: mostCompatibileName, photo: mostCompatibilePic });
   });
 }
