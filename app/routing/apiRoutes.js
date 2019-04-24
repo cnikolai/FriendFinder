@@ -22,8 +22,8 @@ app.post("/api/friends", function(req, res) {
   var leastDifference = 20; //most compatibile
   for (var i=0; i<friendData.length;i++) {
     var totalDifference = 0;
-    for (var j=0; j < friendData[scores].length;j++) {
-      totalDifference += abs(newperson[scores][j]-friendData[scores][j]);
+    for (var j=0; j < 10;j++) {
+      totalDifference += Math.abs(parseInt(newperson["scores"][j])-friendData[i]["scores"][j]);
     }
     if (totalDifference < leastDifference) {
       mostCompatibileName = friendData[i]["name"];

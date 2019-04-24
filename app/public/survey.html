@@ -7,6 +7,7 @@
     <title>Find a Friend Questionairre</title>
     <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
   <style>
   .left {
     margin-left: 60px;
@@ -57,10 +58,10 @@
     <h1 class="left">Survey Questions</h1>
     <form class="left" method="POST" role="form">
         <label>What is your name (required)?</label><br>
-        <input type="text" name="name" size="75" required>
+        <input type="text" id="friendname" size="75" required>
         <br>
         <label>What is your photo URL (required)?</label><br>
-        <input type="text" name="photo" size="75" required>
+        <input type="text" id="friendphoto" size="75" required>
         <br>
         <br>
         <h2>Question 1</h2>
@@ -175,8 +176,8 @@
         $("#submit-btn").on("click", function(event) {
           event.preventDefault();
           var newPerson = {
-            name: $("#name").val().trim(),
-            photo: $("#photo").val().trim(),
+            name: $("#friendname").val().trim(),
+            photo: $("#friendphoto").val().trim(),
             scores: [
                 $("input[name=question1]:checked").val(),
                 $("input[name=question2]:checked").val(),
@@ -223,7 +224,7 @@ window.onclick = function(event) {
 $("#match_name").text(data.name);
 $("#match_pic").attr("src", data.photo);
 $("#match_pic").attr("width", "200");
-$("#match_pic").attr("src", "200");
+$("#match_pic").attr("height", "200");
 
 
 
