@@ -164,8 +164,8 @@
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
-          <p>Your Closest Match</p>
-          <p id="match_name"></p>
+          <h1>Your Closest Match</h1>
+          <h2 id="match_name"></h2>
           <img id="match_pic" src="">
         </div>
     </div>
@@ -178,16 +178,16 @@
             name: $("#name").val().trim(),
             photo: $("#photo").val().trim(),
             scores: [
-                $("#question1").val(),
-                $("#question2").val(),
-                $("#question3").val(),
-                $("#question4").val(),
-                $("#question5").val(),
-                $("#question6").val(),
-                $("#question7").val(),
-                $("#question8").val(),
-                $("#question9").val(),
-                $("#question10").val()
+                $("input[name=question1]:checked").val(),
+                $("input[name=question2]:checked").val(),
+                $("input[name=question3]:checked").val(),
+                $("input[name=question4]:checked").val(),
+                $("input[name=question5]:checked").val(),
+                $("input[name=question6]:checked").val(),
+                $("input[name=question7]:checked").val(),
+                $("input[name=question8]:checked").val(),
+                $("input[name=question9]:checked").val(),
+                $("input[name=question10]:checked").val()
             ]
           };
     
